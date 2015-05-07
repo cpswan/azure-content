@@ -31,7 +31,7 @@ To create a route table named *FrontEndSubnetRouteTable*, run the following Powe
 ### How to add a route to a route table
 To add a route that sets *10.1.1.10* as the next hop for the *10.2.0.0/16* subnet in the route table created above, run the following PowerShell command:
 
-	Set-AzureRoute -RouteTableName FrontEndSubnetRouteTable `
+	Get-AzureRouteTable FrontEndSubnetRouteTable | Set-AzureRoute `
 	-RouteName FirewallRoute -AddressPrefix 10.2.0.0/16 `
 	-NextHopType VirtualAppliance `
 	-NextHopIpAddress 10.1.1.10
